@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import Modal from 'react-responsive-modal';
+import { v4 as generateUuid } from 'uuid';
 import './tweet.scss';
 
-export default () => {
+export default props => {
+  const { addNewTweet } = props;
   const [isModalOpen, updateModalVisiblity] = useState(false);
+  const [newTweetValue, updateTweetValue] = useState('');
 
   return (
     <React.Fragment>
@@ -25,9 +28,21 @@ export default () => {
         <textarea
           placeholder="What's happening?"
           className="tweet__modal__textarea"
+          value={newTweetValue}
+          onChange={e => updateTweetValue(e.target.value)}
           autoFocus
         />
-        <button type="button" className="tweet__modal__submit">
+        <button
+          type="button"
+          className="tweet__modal__submit"
+          onClick={() =>
+            addNewTweet({
+              uuid: generateUuid(),
+              date: new Date(),
+              value: newTweetValue
+            })
+          }
+        >
           <i className="fa fa-twitter margin--base--right" />
           Tweet
         </button>

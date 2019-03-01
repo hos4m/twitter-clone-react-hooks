@@ -1,9 +1,10 @@
-import React,{ useContext } from 'react';
-import { AppContext } from '../../AppContext'
+import React, { useContext } from 'react';
+import { AppContext } from '../../AppContext';
 
 export default () => {
+  const { tweets } = useContext(AppContext);
   console.log('----------------------------------')
-  console.log(useContext(AppContext))
+  console.log(tweets)
   console.log('----------------------------------')
   return <h1>Timeline</h1>;
 };

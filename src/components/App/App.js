@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import 'typeface-lato';
 import 'font-awesome/css/font-awesome.min.css';
 
@@ -8,10 +8,18 @@ import Timeline from '../Timeline/Timeline';
 import Trends from '../Trends/Trends';
 import './app.scss';
 
-export default () => (
-  <AppContext.Provider value={{ tweets: [] }}>
-    <Tweet />
-    <Timeline />
-    <Trends />
-  </AppContext.Provider>
-);
+export default () => {
+  const [tweets, updateTweets] = useState([]);
+
+  const addNewTweet = (tweet) => {
+    updateTweets([tweet, ...tweets])
+  }
+
+  return (
+    <AppContext.Provider value={{ tweets }}>
+      <Tweet addNewTweet={tweet => addNewTweet(tweet)} />
+      <Timeline />
+      <Trends />
+    </AppContext.Provider>
+  );
+};
