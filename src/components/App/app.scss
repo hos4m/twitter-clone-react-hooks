@@ -10,5 +10,23 @@
   &.dark-mode {
     background-color: #333;
     color: #FFF;
+
+    .top-bar {
+      background-color: #000;
+    }
+  }
+
+  .top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: $base-spacing-unit * 2;
+    padding: $base-spacing-unit;
+    background-color: #EEE;
+    border-radius: $border-radius-size;
+
+    .timeline__tweet__author {
+      opacity: 1;
+    }
   }
 }

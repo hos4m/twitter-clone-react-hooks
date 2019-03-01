@@ -3,17 +3,9 @@
 .dark-mode-controller {
   display: flex;
   align-items: center;
-  margin-bottom: $base-spacing-unit * 2;
-  padding: $base-spacing-unit;
-  background-color: #EEE;
-  border-radius: $border-radius-size;
 
   &__label {
     font-size: 14px;
     margin-right: $base-spacing-unit / 2;
-  }
-
-  .dark-mode & {
-    background-color: #000;
   }
 }
