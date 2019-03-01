@@ -1,1 +1,7 @@
 @import '../../assets/styles/reset';
+@import '../../assets/styles/shared';
+
+.main-content {
+  border: 20px solid #EEE;
+  padding: $base-spacing-unit * 2;
+}
