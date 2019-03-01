@@ -2,10 +2,12 @@
 @import '../../assets/styles/shared';
 
 .main-content {
+  max-width: 800px;
   border: 20px solid #EEE;
   padding: $base-spacing-unit * 2;
-  transition: 0.3s;
+	margin: auto;
   border-radius: $border-radius-size;
+  transition: 0.3s;
 
   &.dark-mode {
     background-color: #333;
