@@ -11,6 +11,7 @@ export default function Tweet(props) {
 
   const newTweetOnSubmit = () => {
     updateTweetValue('');
+    updateModalVisiblity(false);
     addNewTweet({
       uuid: generateUuid(),
       date: new Date(),
