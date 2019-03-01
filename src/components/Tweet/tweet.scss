@@ -1,0 +1,47 @@
+@import '../../assets/styles/shared';
+
+.tweet {
+  &__button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: $twitter-blue;
+    color: #FFF;
+    font-size: 200%;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__modal {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    border-radius: $border-radius-size;
+
+    &__textarea {
+      padding: $base-spacing-unit;
+      font-size: 14px;
+      border-color: #DDD;
+      resize: none;
+
+      &:focus {
+        outline: none;
+        border-color: #999;
+      }
+    }
+
+    &__submit {
+      width: 25%;
+      align-self: flex-end;
+      margin-top: $base-spacing-unit * 2;
+      @include button;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+$twitter-blue: #1da1f2;
+$base-spacing-unit: 10px;
+$border-radius-size: 5px;
+
+.margin--base--right {
+  margin-right: $base-spacing-unit;
+}
+
+@mixin button {
+  background-color: $twitter-blue;
+  color: #FFF;
+  font-weight: bold;
+  padding: 8px 15px;
+  border: none;
+  border-radius: $border-radius-size;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: darken($color: $twitter-blue, $amount: 10);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
