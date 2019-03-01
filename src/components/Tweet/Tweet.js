@@ -9,6 +9,19 @@ export default function Tweet(props) {
   const [isModalOpen, updateModalVisiblity] = useState(false);
   const [newTweetValue, updateTweetValue] = useState('');
 
+  const newTweetOnSubmit = () => {
+    updateTweetValue('');
+    addNewTweet({
+      uuid: generateUuid(),
+      date: new Date(),
+      value: newTweetValue,
+      author: {
+        name: `${faker.name.firstName()} ${faker.name.lastName()}`,
+        avatar: faker.image.avatar()
+      }
+    });
+  };
+
   return (
     <React.Fragment>
       <button
@@ -36,17 +49,7 @@ export default function Tweet(props) {
         <button
           type="button"
           className="tweet__modal__submit"
-          onClick={() =>
-            addNewTweet({
-              uuid: generateUuid(),
-              date: new Date(),
-              value: newTweetValue,
-              author: {
-                name: `${faker.name.firstName()} ${faker.name.lastName()}`,
-                avatar: faker.image.avatar()
-              }
-            })
-          }
+          onClick={() => newTweetOnSubmit()}
         >
           <i className="fa fa-twitter margin--base--right" />
           Tweet
