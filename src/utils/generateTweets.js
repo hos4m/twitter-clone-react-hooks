@@ -1,8 +1,8 @@
 import { v4 as generateUuid } from 'uuid';
 import faker from 'faker';
 
-export const tweetsInitialValue = () => {
-  return new Array(20).fill('test').map(_i => ({
+export default numberOfTweetsToGenerate =>
+  new Array(numberOfTweetsToGenerate).fill('test').map(_i => ({
     uuid: generateUuid(),
     date: faker.date.past(),
     value: faker.lorem.sentence(),
@@ -11,4 +11,3 @@ export const tweetsInitialValue = () => {
       avatar: faker.image.avatar()
     }
   }));
-};
