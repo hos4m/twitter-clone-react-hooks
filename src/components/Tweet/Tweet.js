@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from 'react-responsive-modal';
 import { v4 as generateUuid } from 'uuid';
 import faker from 'faker';
@@ -8,6 +8,14 @@ export default function Tweet(props) {
   const { addNewTweet } = props;
   const [isModalOpen, updateModalVisiblity] = useState(false);
   const [newTweetValue, updateTweetValue] = useState('');
+  const [mySuperCoolUser, updateMySuperCoolUser] = useState({});
+
+  useEffect(() => {
+    updateMySuperCoolUser({
+      name: `${faker.name.firstName()} ${faker.name.lastName()}`,
+      avatar: faker.image.avatar()
+    });
+  }, []);
 
   const newTweetOnSubmit = () => {
     updateTweetValue('');
@@ -16,10 +24,7 @@ export default function Tweet(props) {
       uuid: generateUuid(),
       date: new Date(),
       value: newTweetValue,
-      author: {
-        name: `${faker.name.firstName()} ${faker.name.lastName()}`,
-        avatar: faker.image.avatar()
-      }
+      author: mySuperCoolUser
     });
   };
 
