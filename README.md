@@ -1,6 +1,12 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Using only React Hooks to build a simplified Twitter clone
+
+Demo: http://twitter-clone-react-hooks.surge.sh/
+
+---
 
 ## Available Scripts
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In the project directory, you can run:
 
