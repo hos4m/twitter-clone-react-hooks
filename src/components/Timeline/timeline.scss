@@ -21,6 +21,10 @@
       &:last-of-type {
         border-bottom: none;
       }
+
+      &__author {
+        opacity: 0.2;
+      }
     }
 
     &__body {
@@ -31,7 +35,7 @@
     &__author {
       display: flex;
       align-items: center;
-      opacity: 0.4;
+      opacity: 0.3;
       transition: 0.3s;
 
       &__image {
